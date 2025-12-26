@@ -3,7 +3,7 @@ identity:
   author: "sawyer-shi"
   label:
     en_US: "Upload File to Volcengine TOS"
-    zh_Hans: "上传文件至火山引擎TOS并返回URL"
+    zh_Hans: "上传文件至TOS"
     pt_BR: "Enviar arquivo para Volcengine TOS"
 description:
   human:

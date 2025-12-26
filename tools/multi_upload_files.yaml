@@ -3,7 +3,7 @@ identity:
   author: "sawyer-shi"
   label:
     en_US: "Upload Multiple Files to Volcengine TOS"
-    zh_Hans: "批量上传文件至火山引擎TOS并返回URL"
+    zh_Hans: "批量上传文件至TOS"
     pt_BR: "Enviar múltiplos arquivos para Volcengine TOS"
 description:
   human:

@@ -1,11 +1,11 @@
-﻿# Volcengine TOS Object Storage
+# Volcengine TOS Cloud Storage
 
-A powerful Dify plugin providing seamless integration with Volcengine Torch Object Storage (TOS). Enables direct file uploads to Volcengine TOS and efficient file retrieval using URLs, with rich configuration options.
+A powerful Dify plugin providing seamless integration with Volcengine Torch Object Storage (TOS). Enables direct file uploads to Volcengine TOS, efficient file retrieval using URLs, batch operations, and public file downloads with rich configuration options.
 
 ## Version Information
 
-- **Current Version**: v0.0.1
-- **Release Date**: 2025-09-22
+- **Current Version**: v0.0.2
+- **Release Date**: 2025-12-26
 - **Compatibility**: Dify Plugin Framework
 - **Python Version**: 3.12
 
@@ -15,6 +15,7 @@ A powerful Dify plugin providing seamless integration with Volcengine Torch Obje
 3. After completing the above configuration, you can start using the plugin immediately.
 
 ### Version History
+- **v0.0.2** (2025-12-26): Added batch file download, public file download capabilities, fixed bugs
 - **v0.0.1** (2025-09-22): Initial release with file upload and retrieval capabilities, support for multiple directory structures and filename modes
 
 ## Core Features
@@ -35,6 +36,16 @@ A powerful Dify plugin providing seamless integration with Volcengine Torch Obje
 - **Direct Content Access**: Retrieve file content directly using TOS URLs
 - **Cross-Region Support**: Works with all Volcengine TOS regions worldwide
 
+### Batch File Download
+- **Multiple URLs Support**: Download multiple files at once using semicolon-separated URLs
+- **Efficient Batch Processing**: Process multiple files in a single operation
+- **Detailed Status Reporting**: Track success/failure status for each file
+
+### Public File Download
+- **No Authentication Required**: Download public files from any platform without API keys
+- **Universal Compatibility**: Works with any publicly accessible URL
+- **Flexible SSL Options**: Configure SSL verification as needed
+
 ## Technical Advantages
 
 - **Secure Authentication**: Robust credential handling with support for HTTPS
@@ -43,11 +54,13 @@ A powerful Dify plugin providing seamless integration with Volcengine Torch Obje
 - **Multiple File Type Support**: Works with all common file formats
 - **Rich Parameter Configuration**: Extensive options for customized workflows
 - **Source File Tracking**: Preserves original filename information
+- **Batch Operations**: Support for uploading and downloading multiple files
+- **Public Access**: Download public files without authentication
 
 ## Requirements
 
 - Python 3.12
-- Volcengine TOS account with valid AccessKey credentials
+- Volcengine TOS account with valid AccessKey credentials (for TOS operations)
 - Dify Platform access
 - Required Python packages (installed via requirements.txt)
 
@@ -67,7 +80,7 @@ A powerful Dify plugin providing seamless integration with Volcengine Torch Obje
 
 ## Usage
 
-The plugin provides three powerful tools for interacting with Volcengine TOS:
+The plugin provides five powerful tools for interacting with Volcengine TOS:
 
 ### 1. Upload File to TOS (upload_file)
 
@@ -104,6 +117,20 @@ Dedicated tool for retrieving files from Volcengine TOS using URLs.
 - **Parameters**:
   - `file_url`: The URL of the file in Volcengine TOS
 
+### 4. Get Files by URLs (get_files_by_urls)
+
+Dedicated tool for batch downloading multiple files from Volcengine TOS.
+- **Parameters**:
+  - `urls`: Multiple file URLs separated by semicolon (;) (required)
+    - Example: `url1;url2;url3`
+
+### 5. Get Public File by URL (get_public_file_by_url)
+
+Dedicated tool for downloading public files from any platform without authentication.
+- **Parameters**:
+  - `url`: The public URL of the file to download (required)
+  - `enable_verify_ssl`: Enable SSL certificate verification (default: true)
+
 ## Examples
 
 ### Upload File
@@ -119,7 +146,8 @@ Dedicated tool for retrieving files from Volcengine TOS using URLs.
 ## Notes
 
 - Ensure your TOS bucket has the correct permissions configured
-- The plugin requires valid Volcengine credentials with appropriate TOS access permissions
+- The plugin requires valid Volcengine credentials with appropriate TOS access permissions (for TOS operations)
+- Public file download does not require any credentials
 - For very large files, consider using multipart upload functionality (not currently implemented)
 
 ## Developer Information
@@ -133,7 +161,3 @@ Dedicated tool for retrieving files from Volcengine TOS using URLs.
 ---
 
 **Ready to seamlessly integrate with Volcengine TOS?**
-
-
-
-

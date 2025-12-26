@@ -1,0 +1,42 @@
+identity:
+  name: "get_files_by_urls"
+  author: "sawyer-shi"
+  label:
+    en_US: "Batch Download Files from Volcengine TOS"
+    zh_Hans: "批量下载TOS文件"
+    pt_BR: "Baixar arquivos em lote do Volcengine TOS"
+description:
+  human:
+    en_US: "Batch download multiple files from Volcengine TOS through URLs (separated by semicolon)"
+    zh_Hans: "通过URL批量从火山引擎TOS下载多个文件（用分号分隔）"
+    pt_BR: "Baixe vários arquivos do Volcengine TOS por meio de URLs (separados por ponto e vírgula)"
+  llm: "This tool allows users to batch download multiple files from Volcengine TOS. Provide multiple URLs separated by semicolon (;) and configuration parameters."
+parameters:
+  
+  # 下载相关参数
+  - name: urls
+    type: string
+    required: true
+    label:
+      en_US: "URLs"
+      zh_Hans: "文件URLs"
+      pt_BR: "URLs"
+    human_description:
+      en_US: "Multiple file URLs separated by semicolon (;). For example: url1;url2;url3"
+      zh_Hans: "多个文件URL，用分号(;)分隔。例如：url1;url2;url3"
+      pt_BR: "Várias URLs de arquivos separadas por ponto e vírgula (;). Por exemplo: url1;url2;url3"
+    llm_description: "Multiple file URLs to download from Volcengine TOS, separated by semicolon (;)"
+    form: llm
+outputs:
+  - name: files
+    type: array
+    items:
+      type: object
+      properties:
+        file_id: string
+        file_name: string
+        file_size: integer
+        mime_type: string
+extra:
+  python:
+    source: tools/get_files_by_urls.py

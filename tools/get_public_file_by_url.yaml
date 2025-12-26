@@ -1,0 +1,58 @@
+identity:
+  name: "get_public_file_by_url"
+  author: "sawyer-shi"
+  label:
+    en_US: "Download Public File"
+    zh_Hans: "下载公开文件"
+    pt_BR: "Baixar arquivo público"
+description:
+  human:
+    en_US: "Download public files from any platform without authentication requirements"
+    zh_Hans: "从任何平台下载公共文件，无需认证要求"
+    pt_BR: "Baixe arquivos públicos de qualquer plataforma sem requisitos de autenticação"
+  llm: "This tool allows users to download public files from any platform without any API key or authentication. It works with any publicly accessible URL."
+parameters:
+  
+  # 下载相关参数
+  - name: url
+    type: string
+    required: true
+    label:
+      en_US: "URL"
+      zh_Hans: "文件URL"
+      pt_BR: "URL"
+    human_description:
+      en_US: "The public URL of the file to download"
+      zh_Hans: "要下载的公共文件URL"
+      pt_BR: "A URL pública do arquivo para download"
+    llm_description: "The public URL of the file to download from any platform"
+    form: llm
+  
+  - name: enable_verify_ssl
+    type: boolean
+    required: false
+    default: true
+    label:
+      en_US: "Enable SSL Verification"
+      zh_Hans: "启用SSL验证"
+      pt_BR: "Habilitar verificação SSL"
+    human_description:
+      en_US: "Enable SSL certificate verification (default: true)"
+      zh_Hans: "启用SSL证书验证（默认：true）"
+      pt_BR: "Habilitar verificação de certificado SSL (padrão: true)"
+    llm_description: "Enable SSL certificate verification for HTTPS requests"
+    form: form
+
+outputs:
+  - name: files
+    type: array
+    items:
+      type: object
+      properties:
+        file_id: string
+        file_name: string
+        file_size: integer
+        mime_type: string
+extra:
+  python:
+    source: tools/get_public_file_by_url.py
