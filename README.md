@@ -5,7 +5,7 @@ A powerful Dify plugin providing seamless integration with Volcengine Torch Obje
 ## Version Information
 
 - **Current Version**: v0.0.2
-- **Release Date**: 2025-12-26
+- **Release Date**: 2025-12-27
 - **Compatibility**: Dify Plugin Framework
 - **Python Version**: 3.12
 
@@ -15,7 +15,7 @@ A powerful Dify plugin providing seamless integration with Volcengine Torch Obje
 3. After completing the above configuration, you can start using the plugin immediately.
 
 ### Version History
-- **v0.0.2** (2025-12-26): Added batch file download, public file download capabilities, fixed bugs
+- **v0.0.2** (2025-12-27): Added batch file download, public file download capabilities, fixed bugs
 - **v0.0.1** (2025-09-22): Initial release with file upload and retrieval capabilities, support for multiple directory structures and filename modes
 
 ## Core Features
