@@ -192,7 +192,15 @@ class GetFileByUrlTool(Tool):
                 response = client.get_object(bucket=bucket, key=object_key)
                 file_content = response.read()
                 file_size = len(file_content)
-                content_type = response.headers.get('Content-Type', 'application/octet-stream')
+                
+                # 兼容多种SDK版本：尝试多种方式获取content_type
+                content_type = 'application/octet-stream'
+                if hasattr(response, 'content_type') and response.content_type:
+                    content_type = response.content_type
+                elif hasattr(response, 'headers') and response.headers:
+                    content_type = response.headers.get('Content-Type', 'application/octet-stream')
+                elif hasattr(response, 'metadata') and response.metadata:
+                    content_type = response.metadata.get('content-type', 'application/octet-stream')
             except Exception as e:
                 # 回退：尝试匿名HTTP下载（适用于对象公有读或临时授权URL）
                 try:
