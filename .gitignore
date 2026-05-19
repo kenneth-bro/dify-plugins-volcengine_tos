@@ -116,7 +116,7 @@ ipython_config.py
 .env.production.local
 
 # Volcengine TOS Plugin specific
-*.difypkg
+#*.difypkg
 
 # OS generated files
 Thumbs.db
