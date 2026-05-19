@@ -3,11 +3,11 @@ identity:
   name: "volcengine_tos"
   label:
     en_US: "Volcengine TOS"
-    zh_Hans: "火山引擎TOS对象存储"
+    zh_Hans: "火山引擎TOS云存储"
     pt_BR: "Volcengine TOS"
   description:
-    en_US: "Upload and download files from Volcengine TOS."
-    zh_Hans: "从火山引擎TOS对象存储上传和下载文件。"
+    en_US: "Volcengine TOS: supporting file upload, file download, batch upload, batch download, and public file download"
+    zh_Hans: "火山引擎TOS：支持文件上传、文件下载、批量上传文件、批量下载文件、公开文件下载"
     pt_BR: "Faça upload e download de arquivos do Volcengine TOS."
   icon: "icon.png"
 
@@ -15,6 +15,8 @@ tools:
   - "tools/upload_file.yaml"
   - "tools/get_file_by_url.yaml"
   - "tools/multi_upload_files.yaml"
+  - "tools/get_files_by_urls.yaml"
+  - "tools/get_public_file_by_url.yaml"
 
 credentials_for_provider:
   access_key_id:

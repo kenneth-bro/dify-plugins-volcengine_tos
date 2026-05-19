@@ -3,7 +3,7 @@ identity:
   author: "sawyer-shi"
   label:
     en_US: "Download File from Volcengine TOS"
-    zh_Hans: "从火山引擎TOS下载文件"
+    zh_Hans: "下载TOS文件"
     pt_BR: "Baixar arquivo do Volcengine TOS"
 description:
   human:
